@@ -1,0 +1,60 @@
+html, body {
+    height: 100%;
+    margin: 0; 
+}
+body {
+    background-color: gainsboro;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.calculator {
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-bottom: 80px;
+}
+
+.display {
+    width: 500px;
+    height: 120px;
+    background-color: gray;
+    border-radius: 15px;
+}
+.buttons {
+    width: 500px;
+    height: 400px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 80px;
+}
+.row-main button{
+    width: 243px;
+    height: 60px;
+}
+.row-sec button {
+    width: 115px;
+    height: 60px;
+}
+.row button {
+    font-size: 30px;
+    font-family: arial;
+    font-weight: 800;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
+}
