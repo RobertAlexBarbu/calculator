@@ -4,12 +4,16 @@ html, body {
 }
 body {
     background-color: gainsboro;
-
+    font-family: arial;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
+
+
+
+
 .calculator {
     width: 600px;
     height: 600px;
@@ -24,12 +28,36 @@ body {
     margin-bottom: 80px;
 }
 
+
+
+
 .display {
     width: 500px;
     height: 120px;
     background-color: gray;
     border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.display1 {
+    background-color: red;
+}
+.display2 {
+    background-color: blue;
+}
+.display1 , .display2 {
+    height: 55px;
+    width: 475px;
+    text-align: end;
+    font-size: 45px;
+}
+
+
+
+
 .buttons {
     width: 500px;
     height: 400px;
