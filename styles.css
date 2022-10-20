@@ -34,7 +34,7 @@ body {
 .display {
     width: 500px;
     height: 120px;
-    background-color: gray;
+    background-color: rgb(111, 109, 109);
     border-radius: 15px;
 
     display: flex;
@@ -43,16 +43,18 @@ body {
     align-items: center;
 }
 .display1 {
-    background-color: red;
+    font-size: 45px;
+    height: 55px;
 }
 .display2 {
-    background-color: blue;
+    font-size: 30px;
+    height: 40px;
 }
 .display1 , .display2 {
-    height: 55px;
     width: 475px;
     text-align: end;
-    font-size: 45px;
+    color: white;
+    
 }
 
 
@@ -85,4 +87,12 @@ body {
     border-radius: 15px;
     border: 0;
     cursor: pointer;
+}
+
+.operator1 {
+    background-color: rgb(169, 201, 246);
+}
+.operator1:hover{
+    background-color: rgb(43, 127, 244);
+    color: white;
 }
