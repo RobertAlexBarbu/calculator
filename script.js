@@ -1,6 +1,7 @@
 
 function clickNumber(e) {
     console.log(display1.textContent);
+    if(error === false) {
     if(display1.textContent !== '0' && display1.textContent.length < 19 ) {
         display1.textContent = display1.textContent 
         + e.target.textContent;
@@ -10,19 +11,25 @@ function clickNumber(e) {
     }
     else {
         display1.textContent = "ERROR";
-    }
+        display2.textContent = "digit limit reached"
+        error = true;
+    }}
 }
 function clickPoint(e) {
+    if(error === false){
     if(floatingPoint === false) {
         floatingPoint = true;
         display1.textContent = display1.textContent
         + e.target.textContent;
-    }
+    }}
 }
 function clickDelete() {
-    display1.textContent = display1.textContent.slice(0, -1);
+    if(error === false){
+        display1.textContent = display1.textContent.slice(0, -1);
+    }
 }
 function clickOperator(e) {
+    if(error === false) {
     floatingPoint = false;
     switch(prevClick) {
         case '':
@@ -35,21 +42,23 @@ function clickOperator(e) {
             break;
         case '-':
             display2.textContent = +(display2.textContent.slice(0, -2))
-            - +display1.textContent + " " + e.target.textContent;;
+            - +display1.textContent + " " + e.target.textContent;
             break;
         case '*':
             display2.textContent = +(display2.textContent.slice(0, -2))
-            * +display1.textContent + " " + e.target.textContent;;
+            * +display1.textContent + " " + e.target.textContent;
             break;
         case '%':
             display2.textContent = +(display2.textContent.slice(0, -2))
-            / +display1.textContent + " " + e.target.textContent;;
+            / +display1.textContent + " " + e.target.textContent;
             break;
     }
     prevClick = e.target.textContent;
     display1.textContent = '0';
+    }   
 }
 function clickEqual() {
+    if(error === false) {
     floatingPoint = false;
     switch(prevClick) {
         case '+':
@@ -71,12 +80,14 @@ function clickEqual() {
     }
     display2.textContent = '';
     prevClick = '';
+    }
 }
 function clickClear() {
     display2.textContent = '';
     display1.textContent = '';
     prevClick = '';
     floatingPoint = false;
+    error = false;
 }
 
 let error = false;
