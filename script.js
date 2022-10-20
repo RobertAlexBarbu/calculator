@@ -14,11 +14,62 @@ function clickPoint(e) {
 function clickDelete() {
     display1.textContent = display1.textContent.slice(0, -1);
 }
+function clickOperator(e) {
+    floatingPoint = false;
+    switch(prevClick) {
+        case '':
+            display2.textContent = display1.textContent;
+            break;
+        case '+':
+            display2.textContent = +display2.textContent
+            + +display1.textContent;
+            break;
+        case '-':
+            display2.textContent = +display2.textContent
+            - +display1.textContent;
+            break;
+        case '*':
+            display2.textContent = +display2.textContent
+            * +display1.textContent;
+            break;
+        case '%':
+            display2.textContent = +display2.textContent
+            / +display1.textContent;
+            break;
+    }
+    prevClick = e.target.textContent;
+    display1.textContent = '';
+}
+function clickEqual() {
+    floatingPoint = false;
+    switch(prevClick) {
+        case '+':
+            display1.textContent = +display2.textContent
+            + +display1.textContent;
+            break;
+        case '-':
+            display1.textContent = +display2.textContent
+            - +display1.textContent;
+            break;
+        case '*':
+            display1.textContent = +display2.textContent
+            * +display1.textContent;
+            break;
+        case '%':
+            display1.textContent = +display2.textContent
+            / +display1.textContent;
+            break;
+    }
+    display2.textContent = '';
+    prevClick = '';
+}
 
 
 let floatingPoint = false;
+let prevClick = '';
 const buttons = document.querySelectorAll('button');
 const display1 = document.querySelector('.display1');
+const display2 = document.querySelector('.display2');
 
 
 buttons.forEach((element) => {
@@ -30,6 +81,15 @@ buttons.forEach((element) => {
     }
     if(element.textContent === 'Delete') {
         element.addEventListener('click', clickDelete);
+    }
+    if(element.textContent === '+' 
+    || element.textContent === '-'
+    || element.textContent === '*'
+    || element.textContent === '%') {
+        element.addEventListener('click', clickOperator);
+    }
+    if(element.textContent ==='=') {
+        element.addEventListener('click', clickEqual);
     }
 
 });
