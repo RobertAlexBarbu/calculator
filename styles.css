@@ -6,7 +6,7 @@ body {
     background-color: gainsboro;
     font-family: arial;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -26,6 +26,7 @@ body {
     align-items: center;
 
     margin-bottom: 80px;
+    margin-top: 5px;
 }
 
 
@@ -94,5 +95,30 @@ body {
 }
 .operator1:hover{
     background-color: rgb(43, 127, 244);
+    color: white;
+}
+.operator1 {
+    background-color: rgb(176, 226, 176);
+}
+.operator1:hover{
+    background-color: green;
+    color:white;
+}
+.number:hover{
+    background-color: gray;
+    color: white;
+}
+.clear {
+    background-color:rgb(250, 142, 142);
+}
+.clear:hover{
+    background-color: rgb(208, 45, 45);
+    color: white;
+}
+.delete {
+    background-color: rgb(248, 234, 157);
+}
+.delete:hover{
+    background-color: rgb(244, 179, 0);
     color: white;
 }
