@@ -18,22 +18,22 @@ function clickOperator(e) {
     floatingPoint = false;
     switch(prevClick) {
         case '':
-            display2.textContent = display1.textContent;
+            display2.textContent = display1.textContent + " " + e.target.textContent;
             break;
         case '+':
-            display2.textContent = +display2.textContent
+            display2.textContent = +(display2.textContent.slice(0, -2))
             + +display1.textContent;
             break;
         case '-':
-            display2.textContent = +display2.textContent
+            display2.textContent = +(display2.textContent.slice(0, -2))
             - +display1.textContent;
             break;
         case '*':
-            display2.textContent = +display2.textContent
+            display2.textContent = +(display2.textContent.slice(0, -2))
             * +display1.textContent;
             break;
         case '%':
-            display2.textContent = +display2.textContent
+            display2.textContent = +(display2.textContent.slice(0, -2))
             / +display1.textContent;
             break;
     }
@@ -44,19 +44,19 @@ function clickEqual() {
     floatingPoint = false;
     switch(prevClick) {
         case '+':
-            display1.textContent = +display2.textContent
+            display1.textContent = +(display2.textContent.slice(0, -2))
             + +display1.textContent;
             break;
         case '-':
-            display1.textContent = +display2.textContent
+            display1.textContent = +(display2.textContent.slice(0, -2))
             - +display1.textContent;
             break;
         case '*':
-            display1.textContent = +display2.textContent
+            display1.textContent = +(display2.textContent.slice(0, -2))
             * +display1.textContent;
             break;
         case '%':
-            display1.textContent = +display2.textContent
+            display1.textContent = +(display2.textContent.slice(0, -2))
             / +display1.textContent;
             break;
     }
