@@ -1,17 +1,15 @@
 
 function clickNumber(e) {
     console.log(display1.textContent);
-    if(display1.textContent !== '0' && display1.textContent.length < 19 
-    && display1.textContent !== 'Infinity') {
+    if(display1.textContent !== '0' && display1.textContent.length < 19 ) {
         display1.textContent = display1.textContent 
         + e.target.textContent;
     }
-    else if (display1.textContent.length < 19 
-        && display1.textContent !== 'Infinity'){
+    else if (display1.textContent.length < 19 ){
         display1.textContent = e.target.textContent;
     }
     else {
-        display1.textContent = "Infinity";
+        display1.textContent = "ERROR";
     }
 }
 function clickPoint(e) {
@@ -74,8 +72,14 @@ function clickEqual() {
     display2.textContent = '';
     prevClick = '';
 }
+function clickClear() {
+    display2.textContent = '';
+    display1.textContent = '';
+    prevClick = '';
+    floatingPoint = false;
+}
 
-
+let error = false;
 let floatingPoint = false;
 let prevClick = '';
 const buttons = document.querySelectorAll('button');
@@ -101,6 +105,9 @@ buttons.forEach((element) => {
     }
     if(element.textContent ==='=') {
         element.addEventListener('click', clickEqual);
+    }
+    if(element.textContent ==='Clear') {
+        element.addEventListener('click', clickClear);
     }
 
 });
