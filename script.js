@@ -1,6 +1,5 @@
 
 function clickNumber(e) {
-    console.log(display1.textContent);
     if(error === false) {
     if(display1.textContent !== '0' && display1.textContent.length < 19 ) {
         display1.textContent = display1.textContent 
@@ -49,12 +48,20 @@ function clickOperator(e) {
             * +display1.textContent + " " + e.target.textContent;
             break;
         case '%':
+            if(display1.textContent === '0') {
+                display1.textContent = 'ERROR';
+                display2.textContent = 'you can\'t divide by 0';
+                error = true;
+            }
+            else {
             display2.textContent = +(display2.textContent.slice(0, -2))
-            / +display1.textContent + " " + e.target.textContent;
+            / +display1.textContent + " " + e.target.textContent; }
             break;
     }
     prevClick = e.target.textContent;
-    display1.textContent = '0';
+    if(error === false) {
+        display1.textContent = '0';
+    }
     }   
 }
 function clickEqual() {
@@ -74,11 +81,19 @@ function clickEqual() {
             * +display1.textContent;
             break;
         case '%':
+            if(display1.textContent === '0') {
+                display1.textContent = 'ERROR';
+                display2.textContent = 'you can\'t divide by 0';
+                error = true;
+            }
+            else {
             display1.textContent = +(display2.textContent.slice(0, -2))
-            / +display1.textContent;
+            / +display1.textContent; }
             break;
+    } 
+    if(error === false) {
+        display2.textContent = '';
     }
-    display2.textContent = '';
     prevClick = '';
     }
 }
